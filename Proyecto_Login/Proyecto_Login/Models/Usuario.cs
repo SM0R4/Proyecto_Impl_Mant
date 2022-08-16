@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Proyecto_Login.Models
 {
+    //Creación de la clase usuario con los atributos necesarios
     public class Usuario
     {
         public int IdUsuario { get; set; }

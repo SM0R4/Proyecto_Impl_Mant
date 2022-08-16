@@ -18,6 +18,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
+    <!--Contenedor-->
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -25,32 +26,37 @@
                     <h3>Ingresar</h3>
                 </div>
                 <div class="card-body">
+                    <!--Formulario de login-->
                     <form action="@Url.Action("Login","Acceso")" method="post">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
+                            <!--Cajita para el correo-->
                             <input type="text" name="Correo" class="form-control" placeholder="Correo">
-
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
+                            <!--Cajita para la contraseña-->
                             <input type="password" name="Clave" class="form-control" placeholder="Contraseña">
                         </div>
+                        <!--Verificar si hay algo en el view de mensaje para mostrar-->
                         @if (ViewData["Mensaje"] != null)
                         {
                             <div class="alert alert-danger" role="alert">
                                 @ViewData["Mensaje"]
                             </div>
                         }
+                        <!--Botón de submit-->
                         <div class="form-group">
                             <input type="submit" value="Entrar" class="btn float-right login_btn">
                         </div>
                     </form>
                 </div>
                 <div class="card-footer">
+                    <!--Sección por si no tiene una cuenta-->
                     <div class="d-flex justify-content-center links">
                         No tiene una cuenta? <a href="@Url.Action("Registrar","Acceso")">Regístrese aquí</a>
                     </div>

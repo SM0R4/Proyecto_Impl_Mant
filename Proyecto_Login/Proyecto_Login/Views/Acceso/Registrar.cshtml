@@ -18,6 +18,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
+    <!--Contenedor-->
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -25,11 +26,13 @@
                     <h3>Ingresar</h3>
                 </div>
                 <div class="card-body">
+                    <!--Formulario de Registro-->
                     <form action="@Url.Action("Registrar","Acceso")" method="post">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
+                            <!--Cajita para el correo-->
                             <input type="text" name="Correo" class="form-control" placeholder="Correo">
 
                         </div>
@@ -37,14 +40,17 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
+                            <!--Cajita para la contraseña-->
                             <input type="password" name="Clave" class="form-control" placeholder="Contraseña">
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
+                            <!--Cajita para confirmar la contraseña-->
                             <input type="password" name="ConfirmarClave" class="form-control" placeholder="Confirmar Contraseña">
                         </div>
+                        <!--Verificar si hay algo en el view de mensaje para mostrar-->
                         @if (ViewData["Mensaje"] != null)
                         {
                             <div class="alert alert-danger" role="alert">
@@ -52,11 +58,13 @@
                             </div>
                         }
                         <div class="form-group">
+                        <!--Sección por si no tiene una cuenta-->
                             <input type="submit" value="Registrarse" class="btn float-right login_btn">
                         </div>
                     </form>
                 </div>
                 <div class="card-footer">
+                    <!--Sección por si no tiene una cuenta-->
                     <div class="d-flex justify-content-center links">
                         Ya tiene una cuenta? <a href="@Url.Action("Login","Acceso")">Inicie sesión</a>
                     </div>
